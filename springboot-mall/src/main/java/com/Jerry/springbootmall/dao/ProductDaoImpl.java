@@ -17,7 +17,7 @@ import java.util.Map;
  * @Author:Jerry Create 2024/9/18 下午 03:26
  */
 @Component
-public class ProductImpl implements ProductDao {
+public class ProductDaoImpl implements ProductDao {
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     @Override
