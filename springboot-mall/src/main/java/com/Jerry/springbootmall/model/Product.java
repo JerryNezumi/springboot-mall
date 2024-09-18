@@ -6,40 +6,46 @@ import java.util.Date;
 
 
 public class Product {
-private Integer product_id;
-private String product_name;
+private Integer productId;
+private String productName;
 private ProductCategory category;
-private String image_url;
+private String imageUrl;
 private Integer price;
 private Integer stock;
 private String description;
-private Date create_time;
-private Date last_modified_date;
+private Date createTime;
+private Date lastModifiedDate;
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-
-
-    public String getImage_url() {
-        return image_url;
+    public ProductCategory getCategory() {
+        return category;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setCategory(ProductCategory category) {
+        this.category = category;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Integer getPrice() {
@@ -66,27 +72,19 @@ private Date last_modified_date;
         this.description = description;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getLast_modified_date() {
-        return last_modified_date;
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void setLast_modified_date(Date last_modified_date) {
-        this.last_modified_date = last_modified_date;
-    }
-
-    public ProductCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(ProductCategory category) {
-        this.category = category;
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 }
