@@ -5,12 +5,7 @@ import com.Jerry.springbootmall.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-/**
- * ClassName:ProductServiceImpl
- * Package:com.Jerry.springbootmall.service
- *
- * @author:Jerry Create 2024/9/18 下午 03:49
- */
+
 @Component
 public class ProductServiceImpl implements ProductService{
     @Autowired

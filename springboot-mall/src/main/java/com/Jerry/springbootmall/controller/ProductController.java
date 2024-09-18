@@ -9,12 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * ClassName:ProductController
- * Package:com.Jerry.springbootmall.controller
- *
- * @author:Jerry Create 2024/9/18 下午 03:50
- */
+
 @RestController
 public class ProductController {
     @Autowired

@@ -2,12 +2,7 @@ package com.Jerry.springbootmall.model;
 
 import java.util.Date;
 
-/**
- * ClassName:product
- * Package:com.Jerry.springbootmall.model
- *
- * @author:Jerry Create 2024/9/18 下午 03:28
- */
+
 public class Product {
 private Integer product_id;
 private String product_name;

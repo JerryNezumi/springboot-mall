@@ -10,12 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * ClassName:txt
- * Package:com.Jerry.springbootmall.dao
- *
- * @author:Jerry Create 2024/9/18 下午 03:26
- */
+
 @Component
 public class ProductDaoImpl implements ProductDao {
     @Autowired

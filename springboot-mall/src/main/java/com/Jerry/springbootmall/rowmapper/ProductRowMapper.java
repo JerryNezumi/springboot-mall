@@ -6,12 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * ClassName:RowMpper
- * Package:com.Jerry.springbootmall.rowmapper
- *
- * @author:Jerry Create 2024/9/18 下午 03:39
- */
+
 public class ProductRowMapper implements RowMapper<Product> {
     @Override
     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
