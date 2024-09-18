@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * ClassName:ProductController
  * Package:com.Jerry.springbootmall.controller
  *
- * @Author:Jerry Create 2024/9/18 下午 03:50
+ * @author:Jerry Create 2024/9/18 下午 03:50
  */
 @RestController
 public class ProductController {

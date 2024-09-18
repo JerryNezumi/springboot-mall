@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * ClassName:ProductServiceImpl
  * Package:com.Jerry.springbootmall.service
  *
- * @Author:Jerry Create 2024/9/18 下午 03:49
+ * @author:Jerry Create 2024/9/18 下午 03:49
  */
 @Component
 public class ProductServiceImpl implements ProductService{

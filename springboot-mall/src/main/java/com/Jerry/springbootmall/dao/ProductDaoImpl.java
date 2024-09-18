@@ -14,7 +14,7 @@ import java.util.Map;
  * ClassName:txt
  * Package:com.Jerry.springbootmall.dao
  *
- * @Author:Jerry Create 2024/9/18 下午 03:26
+ * @author:Jerry Create 2024/9/18 下午 03:26
  */
 @Component
 public class ProductDaoImpl implements ProductDao {
@@ -25,7 +25,7 @@ public class ProductDaoImpl implements ProductDao {
         String sql="SELECT product_id,product_name, category, image_url," +
                 " price, stock, description, created_date," +
                 " last_modified_date FROM product WHERE product_id = :productId";
-        Map<String,Object> map=new HashMap<String,Object>();
+        Map<String,Object> map=new HashMap<>();
         map.put("productId",productId);
         List<Product> product = namedParameterJdbcTemplate.query(sql, map, new ProductRowMapper());
         if(product.size()>0){

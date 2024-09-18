@@ -6,7 +6,7 @@ import java.util.Date;
  * ClassName:product
  * Package:com.Jerry.springbootmall.model
  *
- * @Author:Jerry Create 2024/9/18 下午 03:28
+ * @author:Jerry Create 2024/9/18 下午 03:28
  */
 public class Product {
 private Integer product_id;

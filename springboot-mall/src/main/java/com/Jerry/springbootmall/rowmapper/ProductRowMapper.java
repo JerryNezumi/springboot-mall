@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * ClassName:RowMpper
  * Package:com.Jerry.springbootmall.rowmapper
  *
- * @Author:Jerry Create 2024/9/18 下午 03:39
+ * @author:Jerry Create 2024/9/18 下午 03:39
  */
 public class ProductRowMapper implements RowMapper<Product> {
     @Override
