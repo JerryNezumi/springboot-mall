@@ -1,12 +1,14 @@
 package com.Jerry.springbootmall.model;
 
+import com.Jerry.springbootmall.constans.ProductCategory;
+
 import java.util.Date;
 
 
 public class Product {
 private Integer product_id;
 private String product_name;
-private String category;
+private ProductCategory category;
 private String image_url;
 private Integer price;
 private Integer stock;
@@ -30,13 +32,7 @@ private Date last_modified_date;
         this.product_name = product_name;
     }
 
-    public String getCategory() {
-        return category;
-    }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public String getImage_url() {
         return image_url;
@@ -84,5 +80,13 @@ private Date last_modified_date;
 
     public void setLast_modified_date(Date last_modified_date) {
         this.last_modified_date = last_modified_date;
+    }
+
+    public ProductCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ProductCategory category) {
+        this.category = category;
     }
 }
