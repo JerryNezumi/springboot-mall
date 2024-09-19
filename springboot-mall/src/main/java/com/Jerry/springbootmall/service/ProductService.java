@@ -1,5 +1,6 @@
 package com.Jerry.springbootmall.service;
 
+import com.Jerry.springbootmall.constans.ProductCategory;
 import com.Jerry.springbootmall.dto.ProductRequest;
 import com.Jerry.springbootmall.model.Product;
 
@@ -11,5 +12,5 @@ public interface ProductService {
      Integer createProduct(ProductRequest productRequest);
      void updateProduct(ProductRequest productRequest, Integer productId);
      void deleteProductById(Integer productId);
-     List<Product> getAllProduct();
+     List<Product> getAllProduct(ProductCategory category, String search);
 }
