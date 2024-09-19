@@ -1,6 +1,5 @@
 package com.Jerry.springbootmall.service;
 
-import com.Jerry.springbootmall.constans.ProductCategory;
 import com.Jerry.springbootmall.dto.ProductQueryParam;
 import com.Jerry.springbootmall.dto.ProductRequest;
 import com.Jerry.springbootmall.model.Product;

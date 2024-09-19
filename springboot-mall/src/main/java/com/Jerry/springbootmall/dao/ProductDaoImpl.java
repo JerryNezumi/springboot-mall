@@ -1,6 +1,5 @@
 package com.Jerry.springbootmall.dao;
 
-import com.Jerry.springbootmall.constans.ProductCategory;
 import com.Jerry.springbootmall.dto.ProductQueryParam;
 import com.Jerry.springbootmall.dto.ProductRequest;
 import com.Jerry.springbootmall.model.Product;
@@ -107,7 +106,7 @@ public class ProductDaoImpl implements ProductDao {
             map.put("search", "%" +  productQueryParam.getSearch() + "%");
         }
         sql += " ORDER BY " + productQueryParam.getOrderBy() + " " + productQueryParam.getSort();
-
+        sql += " LIMIT " + productQueryParam.getLimit() + " OFFSET " + productQueryParam.getOffset();
         List<Product> products = namedParameterJdbcTemplate.query(sql,map, new ProductRowMapper());
         return products;
 
