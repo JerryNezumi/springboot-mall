@@ -96,15 +96,7 @@ public class ProductDaoImpl implements ProductDao {
                 " description, created_date, last_modified_date" +
                 " FROM product WHERE 1=1";
         Map<String,Object> map=new HashMap<>();
-        if(productQueryParam.getCategory()!=null){
-            sql += " AND category = :category";
-            map.put("category",productQueryParam.getCategory().name());
-
-        }
-        if(productQueryParam.getSearch()!=null){
-            sql += " AND product_name LIKE :search";
-            map.put("search", "%" +  productQueryParam.getSearch() + "%");
-        }
+        sql=addFilteringSql(sql,map,productQueryParam);
         sql += " ORDER BY " + productQueryParam.getOrderBy() + " " + productQueryParam.getSort();
         sql += " LIMIT " + productQueryParam.getLimit() + " OFFSET " + productQueryParam.getOffset();
         List<Product> products = namedParameterJdbcTemplate.query(sql,map, new ProductRowMapper());
@@ -116,6 +108,13 @@ public class ProductDaoImpl implements ProductDao {
     public Integer countProduct(ProductQueryParam productQueryParam) {
         String sql = "SELECT count(*) FROM product WHERE 1=1";
         Map<String,Object> map=new HashMap<>();
+        sql=addFilteringSql(sql,map,productQueryParam);
+        Integer total = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
+        return total;
+
+    }
+    private String addFilteringSql(String sql,Map<String,Object> map,
+                          ProductQueryParam productQueryParam){
         if(productQueryParam.getCategory()!=null){
             sql += " AND category = :category";
             map.put("category",productQueryParam.getCategory().name());
@@ -125,8 +124,6 @@ public class ProductDaoImpl implements ProductDao {
             sql += " AND product_name LIKE :search";
             map.put("search", "%" +  productQueryParam.getSearch() + "%");
         }
-        Integer total = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
-        return total;
-
+        return sql;
     }
 }
