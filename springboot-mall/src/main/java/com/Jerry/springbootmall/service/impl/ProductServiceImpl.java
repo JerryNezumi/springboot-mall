@@ -1,9 +1,10 @@
-package com.Jerry.springbootmall.service;
+package com.Jerry.springbootmall.service.impl;
 
 import com.Jerry.springbootmall.dao.ProductDao;
 import com.Jerry.springbootmall.dto.ProductQueryParam;
 import com.Jerry.springbootmall.dto.ProductRequest;
 import com.Jerry.springbootmall.model.Product;
+import com.Jerry.springbootmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 @Component
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
     @Override
