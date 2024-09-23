@@ -26,4 +26,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
 
     }
+
+    @PostMapping("/User/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserRegisterRequest userRegisterRequest){
+        User user = userService.login(userRegisterRequest);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
+
+    }
 }

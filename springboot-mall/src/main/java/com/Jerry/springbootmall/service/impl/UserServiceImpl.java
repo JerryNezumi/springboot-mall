@@ -37,4 +37,23 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Integer userId) {
         return userDao.getUserById(userId);
     }
+
+    @Override
+    public User login(UserRegisterRequest userRegisterRequest) {
+        User user = userDao.getUserByEmail(userRegisterRequest.getEmail());
+
+        //判斷該email是否已註冊
+        if(user == null) {
+            log.warn("該email {} 尚未註冊", userRegisterRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        //判斷密碼是否正確
+        if(user.getPassword().equals(userRegisterRequest.getPassword())) {
+            return user;
+        }else {
+            log.warn("該email {} 的密碼不正確", userRegisterRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+    }
 }
