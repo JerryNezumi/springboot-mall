@@ -1,11 +1,18 @@
 package com.Jerry.springbootmall.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Date;
 
 public class User {
     private Integer userId;
     private String email;
+
+    //隱藏返回給前端的密碼
+    @JsonIgnore
     private String password;
+
     private Date createDate;
     private Date lastModifiedDate;
 
