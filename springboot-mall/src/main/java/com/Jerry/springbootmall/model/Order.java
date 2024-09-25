@@ -1,6 +1,7 @@
 package com.Jerry.springbootmall.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private Integer orderId;
@@ -8,6 +9,15 @@ public class Order {
     private Integer totalAmount;
     private Date createdDate;
     private Date lastModifiedDate;
+    private List<OrderItem> orderItemsList;
+
+    public List<OrderItem> getOrderItemsList() {
+        return orderItemsList;
+    }
+
+    public void setOrderItemsList(List<OrderItem> orderItems) {
+        this.orderItemsList = orderItems;
+    }
 
     public Integer getOrderId() {
         return orderId;
