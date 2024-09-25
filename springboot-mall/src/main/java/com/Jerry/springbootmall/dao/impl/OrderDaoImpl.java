@@ -2,6 +2,7 @@ package com.Jerry.springbootmall.dao.impl;
 
 import com.Jerry.springbootmall.dao.OrderDao;
 import com.Jerry.springbootmall.dto.CreateOrderRequest;
+import com.Jerry.springbootmall.dto.OrderQueryParam;
 import com.Jerry.springbootmall.model.Order;
 import com.Jerry.springbootmall.model.OrderItem;
 import com.Jerry.springbootmall.rowmapper.OrderItemRowMapper;
@@ -82,5 +83,40 @@ public class OrderDaoImpl implements OrderDao {
         List<OrderItem> list = namedParameterJdbcTemplate.query(sql, map,new OrderItemRowMapper());
         return  list;
 
+    }
+
+    @Override
+    public List<Order> getOrders(OrderQueryParam orderQueryParam) {
+        String sql = "SELECT order_id,user_id,total_amount,created_date,last_modified_date"
+                + " FROM  `order` WHERE 1=1";
+        Map<String, Object> map = new HashMap<>();
+        if(orderQueryParam.getUserId()!=null){
+            sql += " AND user_id = :userId";
+            map.put("userId", orderQueryParam.getUserId());
+        }
+
+        //排序
+        sql +=" ORDER BY created_date DESC";
+
+        //分頁
+        sql += " LIMIT :limit OFFSET :offset";
+        map.put("limit", orderQueryParam.getLimit());
+        map.put("offset", orderQueryParam.getOffset());
+
+        List<Order> orders = namedParameterJdbcTemplate.query(sql, map, new OrderRowMapper());
+        return orders;
+
+    }
+
+    @Override
+    public Integer getCountOrder(OrderQueryParam orderQueryParam) {
+        String  sql = "SELECT COUNT(*) FROM  `order` WHERE 1=1";
+        Map<String, Object> map = new HashMap<>();
+        if(orderQueryParam.getUserId()!=null){
+            sql += " AND user_id = :userId";
+            map.put("userId", orderQueryParam.getUserId());
+        }
+        Integer total = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
+        return total;
     }
 }
