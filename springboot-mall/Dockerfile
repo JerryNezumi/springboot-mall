@@ -1,3 +1,16 @@
+# 第一階段：構建階段
+FROM maven:3.8.6-openjdk-17 AS build
+
+# 設定工作目錄
+WORKDIR /app
+
+# 複製 pom.xml 和源碼到工作目錄
+COPY pom.xml .
+COPY src ./src
+
+# 執行 Maven 包裝命令，生成 JAR 文件
+RUN mvn clean package -DskipTests
+
 # 基礎映像，選擇適合的 JDK 版本
 FROM openjdk:17-jdk-slim
 
