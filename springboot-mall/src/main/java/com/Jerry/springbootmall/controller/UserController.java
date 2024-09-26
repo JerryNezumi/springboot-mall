@@ -7,10 +7,12 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class UserController {
 
@@ -27,7 +29,7 @@ public class UserController {
 
     }
 
-    @PostMapping("/User/login")
+        @PostMapping("/User/login")
     public ResponseEntity<User> login(@RequestBody @Valid UserRegisterRequest userRegisterRequest){
         User user = userService.login(userRegisterRequest);
         return ResponseEntity.status(HttpStatus.OK).body(user);

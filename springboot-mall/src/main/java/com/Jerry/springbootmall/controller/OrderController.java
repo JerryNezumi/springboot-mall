@@ -10,7 +10,6 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @Validated
 public class OrderController {
@@ -51,7 +51,6 @@ public class OrderController {
         page.setLimit(limit);
         page.setOffset(offset);
         page.setResults(orders);
-        page.setTotal(totalOrder);
 
         return ResponseEntity.status(HttpStatus.OK).body(page);
 
