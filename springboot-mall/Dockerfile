@@ -1,5 +1,5 @@
 # 第一階段：構建階段
-FROM maven:3.8.6-openjdk-17-slim AS build
+FROM maven:3.8.6 AS build
 
 # 設定工作目錄
 WORKDIR /app
