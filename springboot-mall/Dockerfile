@@ -1,5 +1,5 @@
 # 第一階段：構建階段
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.6-openjdk-17-slim AS build
 
 # 設定工作目錄
 WORKDIR /app
@@ -25,4 +25,3 @@ CMD ["java", "-jar", "springboot-mall.jar"]
 
 # 可選：設置運行該應用的默認端口（若應用內指定了端口）
 EXPOSE 8080
-
