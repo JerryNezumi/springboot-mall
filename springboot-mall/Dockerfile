@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 第二階段：運行階段
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk
 
 # 設置工作目錄
 WORKDIR /app
