@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/mall?serverTimezone=Asia/Taipei&characterEncoding=utf-8
+      SPRING_DATASOURCE_URL: jdbc:mysql://172.18.0.2:3306/mall?serverTimezone=Asia/Taipei&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: 12345678
       SPRING_JACKSON_TIME_ZONE: GMT+8
