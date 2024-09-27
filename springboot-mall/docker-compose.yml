@@ -25,6 +25,10 @@ services:
       MYSQL_DATABASE: mall
     volumes:
       - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      retries: 5
 
 volumes:
   db_data:
