@@ -50,6 +50,7 @@ public class OrderController {
         Page<Order> page = new Page<>();
         page.setLimit(limit);
         page.setOffset(offset);
+        page.setTotal(totalOrder);
         page.setResults(orders);
 
         return ResponseEntity.status(HttpStatus.OK).body(page);
