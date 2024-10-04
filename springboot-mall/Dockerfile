@@ -23,5 +23,5 @@ COPY --from=build /app/target/springboot-mall-0.0.1-SNAPSHOT.jar ./springboot-ma
 # 指定啟動命令
 CMD ["java", "-jar", "springboot-mall.jar"]
 
-# 可選：設置運行該應用的默認端口（若應用內指定了端口）
+# 可選：設置運行該應用的預設端口
 EXPOSE 8080
