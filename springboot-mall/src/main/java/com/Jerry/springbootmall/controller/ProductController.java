@@ -84,7 +84,6 @@ public class ProductController {
         //檢查 product 是否存在
         Product product = productService.getProductById(productId);
         if (product == null) {
-            222
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         //修改商品的數據
